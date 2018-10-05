@@ -53,6 +53,38 @@ void DuyetLNR(TREE t) {
 		DuyetLNR(t->pLeft);//duyet qua trai
 		cout << t->info << " ";// Xuat du lieu
 		DuyetLNR(t->pRight);//duyet qua phai
+		
+	}
+}
+//Xuat cay nhi phan theo RNL<=>xuat cac phan tu theo trinh tu tang dan
+void DuyetRNL(TREE t) {
+	//Cay con phan tu
+	if (t != NULL) {
+		DuyetRNL(t->pRight);//duyet qua phai
+		cout << t->info << " ";// Xuat du lieu
+		DuyetRNL(t->pLeft);//duyet qua trai
+
+	}
+}
+//Xuat cay nhi phan theo LRN
+void DuyetLRN(TREE t) {
+	//Cay con phan tu
+	if (t != NULL) {
+		DuyetLRN(t->pLeft);//duyet qua trai
+		DuyetLRN(t->pRight);//duyet qua phai
+		cout << t->info << " ";// Xuat du lieu
+
+
+	}
+}
+//Xuat cay nhi phan theo RLN
+void DuyetRLN(TREE t) {
+	//Cay con phan tu
+	if (t != NULL) {
+		DuyetRLN(t->pRight);//duyet qua phai
+		DuyetRLN(t->pLeft);//duyet qua trai
+		cout << t->info << " ";// Xuat du lieu
+		
 
 	}
 }
@@ -65,6 +97,9 @@ void Menu(TREE &t) {
 		cout << "2.Duyet cay theo NLR" << endl;
 		cout << "3.Duyet cay theo NRL" << endl;
 		cout << "4.Duyet cay theo LNR" << endl;
+		cout << "5.Duyet cay theo RNL" << endl;
+		cout << "6.Duyet cay theo LRN" << endl;
+		cout << "7.Duyet cay theo RLN" << endl;
 		cout << "==============================" << endl;
 		int lc;
 		cout << "Nhap lua chon cua ban:";
@@ -99,6 +134,24 @@ void Menu(TREE &t) {
 			case 4: {
 				cout << "Duyen cay theo LNR:" << endl;
 				DuyetLNR(t);
+				system("pause");
+				break;
+			}
+			case 5: {
+				cout << "Duyen cay theo RNL:" << endl;
+				DuyetRNL(t);
+				system("pause");
+				break;
+			}
+			case 6: {
+				cout << "Duyen cay theo LRN:" << endl;
+				DuyetLRN(t);
+				system("pause");
+				break;
+			}
+			case 7: {
+				cout << "Duyen cay theo RLN:" << endl;
+				DuyetRLN(t);
 				system("pause");
 				break;
 			}
